@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marshmallow Offer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="modern-spa-container">
+    
+    <div class="spa-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
+    
+    <main class="spa-main-content">
+      
+      <div class="spa-logo-section">
+        <img src="logo-brodrie-MM-01.png" alt="Marsh & Mallow Logo" class="spa-logo" />
+      </div>
+      
+      
+      <section class="spa-hero">
+        <div class="spa-hero-content">
+          <h1 class="spa-main-title">
+            Révélez votre 
+            <span class="spa-accent-text">Beauté Naturelle</span>
+          </h1>
+          <div class="spa-offer-badge">OFFRE SPÉCIALE</div>
+          <p class="spa-hero-subtitle">
+            Découvrez nos soins visage & Hydrafacial premium à prix exceptionnel
+            <br><span class="spa-highlight">Réservez dès maintenant pour une transformation éclatante</span>
+          </p>
+        </div>
+        
+        
+        <div class="spa-image-showcase">
+          <div class="spa-main-image">
+            <img src="woman-hydrafacial.png" alt="Soin Hydrafacial Premium" />
+          </div>
+          <div class="spa-image-grid">
+            <img src="image.png" alt="Soin Visage Marsh & Mallow" class="spa-grid-img" />
+            <img src="image copy.png" alt="Ambiance Spa Relaxante" class="spa-grid-img" />
+            <img src="image copy 2.png" alt="Détente et Bien-être" class="spa-grid-img" />
+          </div>
+        </div>
+      </section>
+      
+      
+      <section class="spa-services-section">
+        <div class="spa-services-grid">
+          <div class="spa-service-card">
+            <div class="service-icon-bg"></div>
+            <h3>Soin Visage Signature</h3>
+            <p>Nettoyage profond, hydratation intense et éclat naturel retrouvé</p>
+            <div class="service-price">250 dhs</div>
+          </div>
+          <div class="spa-service-card featured">
+            <div class="service-icon-bg featured-bg"></div>
+            <h3>Hydrafacial Premium</h3>
+            <p>Technologie de pointe pour une peau lisse, lumineuse et régénérée</p>
+            <div class="service-price">250 dhs</div>
+            <div class="popular-badge">Populaire</div>
+          </div>
+        </div>
+      </section>
+      
+     
+      <section class="spa-booking-section">
+        <div class="spa-booking-card">
+          <h3>Réservez votre moment de beauté</h3>
+          <form class="spa-booking-form" id="bookingForm">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Votre nom complet" required />
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Numéro de téléphone" required />
+            </div>
+            <div class="form-group">
+              <input type="date" name="date" required />
+            </div>
+            <a href="https://wa.me/212641910657" class="spa-cta-button" id="reserverBtn">
+              <div class="cta-ripple"></div>
+              Réserver sur WhatsApp
+            </a>
+          </form>
+        </div>
+      </section>
+      
+     
+      <div id="spa-modal" class="spa-modal">
+        <div class="spa-modal-content">
+          <span class="spa-modal-close" id="modalClose">&times;</span>
+          <div class="spa-modal-icon"></div>
+          <h3 class="spa-modal-title">Nous Allons Vous Contacter Pour La Reservation</h3>
+          <p class="spa-modal-subtitle">Merci pour votre intérêt ! Notre équipe vous contactera bientôt.</p>
+        </div>
+      </div>
+      
+   
+      <footer class="spa-footer">
+        <div class="spa-footer-content">
+          <div class="spa-brand-info">
+            <h4>Marsh & Mallow Beauty Spa</h4>
+            <p>Ambiance cocooning, soins haut de gamme, et moments mère-fille inoubliables à Rabat.</p>
+          </div>
+          <div class="spa-footer-actions">
+            <a href="https://wa.me/212641910657" class="footer-action-btn" target="_blank">
+              Contact WhatsApp
+            </a>
+            <a href="https://maps.app.goo.gl/f3mR8vtcL79CP3tH8" class="footer-action-btn" target="_blank">
+              Nous localiser
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Modal functionality
+    const reserverBtn = document.getElementById('reserverBtn');
+    const modal = document.getElementById('spa-modal');
+    const closeBtn = document.getElementById('modalClose');
+
+    
+    reserverBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      setTimeout(() => {
+        modal.classList.add('show');
+      }, 10);
+    });
+
+    
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300);
+    });
+
+   
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
